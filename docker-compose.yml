@@ -1,0 +1,13 @@
+version: "3"
+services:
+  php:
+    build: .
+    container_name: billie_test
+    environment:
+      APP_NAME: billie_test
+      XDEBUG_CONFIG: 'remote_host=${XDEBUG_REMOTE_HOST}'
+    volumes:
+      - ./vendor:${PROJECT_ROOT}/vendor:cached
+      - ./:${PROJECT_ROOT}:delegated
+    ports:
+      - "8080:8080"
