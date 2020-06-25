@@ -1,0 +1,6 @@
+time_sync:
+  path: /sync
+  methods: GET
+  controller: App\Controller\TimeSyncController
+  defaults:
+    _format: json
